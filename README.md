@@ -3,4 +3,4 @@ Aplicacion MEAN (Mongo, Express, Angular y Node) conectada adicionalmente a una 
 
 # Instrucciones
 
-Primero se debe tener instalado tanto Docker como Docker-Compose. Iniciar el servicio de Mongo con el comando `sudo system ctl start mongod`. Luego hacer `docker-compose build` seguido de `docker-compose up -d`
+Primero se debe tener instalado tanto Docker como Docker-Compose. Luego hacer `docker-compose build` seguido de `docker-compose up -d`
