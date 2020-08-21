@@ -1,0 +1,31 @@
+version: '2' # specify docker-compose version
+# Define the services/containers to be run
+services:
+  frontend: #name of the first service
+    build: docker-frontend-prueba # specify the directory of the Dockerfile
+    ports:
+      - "4200:4200" # specify port forewarding
+    container_name: front-container
+    restart: always
+  backend: #name of the second service
+    build: docker-backend-prueba # specify the directory of the Dockerfile
+    ports:
+      - "3000:3000" #specify ports forewarding
+    container_name: back-container
+    restart: always
+    depends_on:
+      - mongo
+      - mysql
+  mongo:
+    image: mongo
+    ports:
+    - "27017:27017"
+    restart: always
+  mysql:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: "DockerBraulio"
+    ports:
+    - "3306:3306"
+    restart: always
